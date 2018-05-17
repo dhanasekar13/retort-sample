@@ -2,6 +2,9 @@
 
 > An electron-vue project
 
+#### Overview
+
+This is the sample application of retort group
 #### Build Setup
 
 ``` bash
