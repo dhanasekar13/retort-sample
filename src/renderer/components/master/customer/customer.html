@@ -1,0 +1,86 @@
+
+<div>
+<div class="container">
+<h1 align=center>Customer Master</h1>
+<hr>
+<div class="common">
+<label><h2>Customer type  :       </h2></label>
+<form v-model="gender">
+<input type="radio" name="gender" value="male" checked > Distributor
+<input type="radio" name="gender" value="female" > Doctors
+<input type="radio" name="gender" value="other"> Others
+</form>
+</div>
+<br>
+<div id="t1">
+<label><h2>State : </h2></label>
+<select v-model="state" >
+<option ></option>
+</select>
+<label><h2>District :</h2></label>
+<select v-model="dist">
+<option ></option>
+</select>
+</div><br>
+<div id="t2" class="common">
+<label><h2 >Customer code : </h2></label>
+<select v-model="code">
+<option></option>
+</select>
+<label><h2>Name : </h2></label>
+<input type="text" v-model="name">
+</div><br>
+<div id="t3" class="common">
+<label><h2>Address1  :</h2></label>
+<input type="text">
+</div><br>
+<div id="t4" class="common">
+<label><h2>Address2 :</h2></label>
+<input type="text">
+</div><br>
+<div id="t5" class="common">
+<label><h2>Address3  :</h2></label>
+<input type="text">
+</div><br>
+<div id="t6" class="common">
+<label><h2>Destination</h2></label>
+<input type="text">
+<label><h2>Fax No : </h2></label>
+<input type="text">
+</div><br>
+<div id="t7" class="common">
+<label><h2>phone no</h2></label>
+<input type="text">
+<label><h2>Pan no</h2></label>
+<input type="text">
+</div><br>
+<div id="t8" class="common">
+<label><h2>TIN/CST NO</h2></label>
+<input type="text">
+<label><h2>DL . NO</h2></label>
+<input type="text">
+</div><br>
+<div id="t9" class="common">
+<label><h2>AREA CODE</h2></label>
+<input type="text">
+<label><h2>BANK NAME</h2></label>
+<input type="text">
+</div><br>
+<div class="common">
+<label><h2>TR. DISC. S</h2></label>
+<input type="text">
+<label><h2>TR. DISC. N S</h2></label>
+<input type="text">
+<label><h2>TRANSPORT</h2></label>
+<input type="text">
+</div><br>
+<br style="margin:20">
+<div class="common">
+<button >Add New</button>
+<button>Save</button>
+<button>Modify</button>
+<button>Delete</button>
+<button>Report</button>
+</div>
+</div>
+</div>

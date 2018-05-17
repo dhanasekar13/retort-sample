@@ -1,0 +1,41 @@
+
+.container {
+  background:lightgrey;
+  padding:2% 2%;
+  margin:4% 2%;
+  border:3% 3%;
+}
+div {
+  margin:1% auto;
+}
+#a1,#a7, #a2, #a3, #a4,#a5,#a6 #a61{
+  width:100%;
+}
+#a1 div ,#a3 div,#a4 div,#a5 div{
+  width:48%;
+  display:inline-block
+}
+#a1 div label ,#a2 div label ,#a3 div label ,#a4 div label ,#a5 div label ,#a6 div label ,#a7 div label {
+  width:50%;
+  display:inline-block;
+}
+#a1 #a12 input[type='text'],#a3 #a31 input[type='text'],#a3 #a32 input[type='text'],#a4 #a41 input[type='text'],#a4 #a42 input[type='text'],#a5 #a51 input[type='text'],#a5 #a52 input[type='text']{
+  width:45%;
+}
+#a1 #a11 select {
+  width:45%
+}
+#a2 input[type='text'],#a11 input[type='text']{
+  width:45%;
+}
+#a7 button ,#a7 input {
+  width:18%;
+  display:inline-block
+}
+h2 {
+  display:inline
+}
+#a2 div{
+  width:30%;
+  display:inline-block
+}

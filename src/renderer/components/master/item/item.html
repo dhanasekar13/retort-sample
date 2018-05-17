@@ -1,0 +1,77 @@
+<div>
+  <div class="container">
+    <header align=center>
+      <h1>ITEM MASTER</h1>
+    </header>
+    <hr>
+    <form v-on:submit.prevent="hit">
+    <div id="a1">
+      <div id="a11">
+      <label><h2>Item Code : </h2></label>
+      <input type="text"  v-model="itemCode" required>
+    </div><div id="a12">
+      <label><h2>Name : </h2></label>
+      <input type="text" v-model="itemName" required>
+    </div>
+    </div>
+    <div id="a2">
+      <div id="a21">
+        <label><h2>Pack : </h2></label>
+          <input type="text" name="" value=""  v-model="itemPack" required>
+      </div>
+      <div id="a22">
+        <label><h2>Pack.Unit:</h2></label>
+        <input type="text" name="" value="" v-model="itemPackUnit" required>
+      </div>
+      <div id="a23">
+          <label><h2>Units :</h2></label>
+          <input type="text" name="" value="" v-model="itemUnits" required>
+      </div>
+    </div>
+    <div id="a3">
+      <div id="a31">
+        <label><h2>M.R.P</h2></label>
+        <input type="text" name="" v-model="itemMrp" value="">
+      </div>
+      <div id="a32">
+        <label><h2>Trad Price</h2></label>
+        <input type="text" name="" v-model="itemTrad" value="">
+      </div>
+    </div>
+    <div id="a4">
+      <div id="a41">
+        <label><h2>Group</h2></label>
+        <input type="text" name="" value="" v-model="itemGroup" required>
+        </div>
+      <div id="a42">
+        <label><h2>Batch Name</h2></label>
+        <input type="text" name="" value="" v-model="itemBatch" required>
+      </div>
+    </div>
+    <div id="a5">
+      <div id="a51">
+        <label><h2>Schedule Type</h2></label>
+        <input type="text" name="" value="" v-model="itemType">
+      </div>
+      <div id="a52">
+        <label><h2>Samples Flag</h2></label>
+        <input type="text" name="" value="S" v-model="itemSampleFlag">
+      </div>
+    </div>
+    <div id="a6">
+      <div id="a61">
+        <label><h2>Tax Free Flag</h2></label>
+        <input type="text" name="" value="S" v-model="itemTaxFlag">
+      </div>
+    </div>
+    <br><br>
+    <div id="a7">
+    <input type="submit"  value="Create" v-on:click="change(creat)" >
+    <input type="submit"  value="Save" v-on:click="change(save)"  >
+    <input type="submit"  value="Modify" v-on:click="change(modify)"  >
+    <input type="submit"  value="Delete" v-on:click="change(delete1)"  >
+  <button>Report</button>
+  </div>
+</form>
+  </div>
+</div>

@@ -1,0 +1,72 @@
+
+.container {
+  width:55%;
+  display:inline-block;
+  background:lightgrey;
+  padding:1% 1%;
+  margin:1% 1%;
+  border:1% 1%;
+}
+
+.container1 {
+  width:30%;
+  display:inline-block;
+  background:lightgrey;
+  padding:1% 1%;
+  margin:1% 1%;
+  border:1% 1%;
+}
+.container1 input, .container1 label {
+  width:10%;
+  padding:1% 1%;
+  margin:1% 1%;
+  border:1% 1%;
+}
+.container1 button{
+  width:80%;
+  padding:1% 1%;
+  margin:1% 1%;
+}
+
+.whole {
+  width:99%;
+  display:inline-block;
+}
+#t1 div,#t2 div {
+    width:95%;
+}
+div {
+  margin:1% auto;
+}
+h2 {
+  display:inline
+}
+#t1 select ,#t2 select,#t2 label,#t1 label {
+  width:40%;
+}
+#t3 div ,#t4 div ,#t5 div ,#t6 div,#t7 div ,#t8 div{
+  width:40%;
+  display:inline-block;
+}
+#t3 input ,#t3 label,#t4 input ,#t4 label,#t5 input ,#t5 label ,#t6 input ,#t6 label ,#t7 input ,#t7 label,#t8 input ,#t8 label {
+  width:45%;
+  display:inline-block;
+}
+.container1 div {
+  width:95%;
+}
+.container1 h2 {
+  display:inline-block;
+}
+.container1 input ,.container1 label {
+  width:40%;
+  display:inline-block
+}
+#t9 button{
+  width:47%;
+  display:inline-block;
+}
+#t10 button,#t11 button{
+  width:90%;
+  display:inline-block;
+}

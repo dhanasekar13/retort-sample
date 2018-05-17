@@ -1,0 +1,76 @@
+
+.container {
+background:lightgrey;
+border:3%;
+width:90%;
+height:90%;
+margin:2% auto;
+padding:2% 2%;
+}
+div {
+  margin:1% auto;
+}
+#f1 ,#f2 ,#f3 ,#f4,#f5,#f6,#f7,#f8{
+  width:100%
+}
+#f1 #f11 label,#f31 label,#f41 label {
+  width:30%;
+  display:inline-block;
+}
+#f8 div {
+  width:97%;
+}
+#f11 h2 {
+  width:100%;
+  display:inline-block;
+}
+#f11 select ,#f81 select,#f72 select{
+  width:60%;
+  display:inline-block
+}
+#f7 div {
+  width:30%;
+  display:inline-block;
+}
+#f2 div,#f5 div,#f6 div{
+  width:48%;
+  display:inline-block
+}
+#f21 label  {
+  width:40%;
+  display:inline-block;
+}
+#f22 label,#f51 label ,#f52 label,#f61 label,#f62 label{
+  width:40%;
+  display:inline-block;
+}
+#f21 select,#f22 input,#f51 input,#f52 input ,#f61 input ,#f62 input{
+  width:48%;
+  display:inline-block;
+}
+#f31 div,#f41 div {
+  width:87%;
+}
+#f31 input ,#f41 input{
+  width:60%;
+}
+#f71 label,#f72 label,#f73 label {
+  width:40%;
+  display:inline-block;
+}
+#f71 input ,#f71 option ,#f71 option{
+  width:50%;
+}
+#f72 select,#f73 select {
+  width:50%;
+}
+#f9 {
+  width:100%;
+}
+#f9 button{
+  width:19%;
+  display:inline-block;
+}
+h2{
+  display:inline;
+}
