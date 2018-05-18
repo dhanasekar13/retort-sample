@@ -1,35 +1,5 @@
-<template>
-<div>
-<div class="container" align="center">
-
-<h1>SAMPLE APPLICATION</h1>
-
-<form>
-<label><b>
-Company </b>
-</label>
-  <select v-model="cname">
-  <option value=01>RETORT PHARMACEUTICALS</option>
-  <option value=02>RETORT LABORATORIES</option>
-  <option value=03>K.C CORPORATION</option>
-  </select>
-<label><b>
-USER NAME</b>
-</label>
-  <select v-model="uname">
-  <option value="Admin">Admin</option>
-  <option value="edp">Edp</option>
-  <option value="production">Developer</option>
-  </select>
-  <label> <b> Password</b></label>
-  <input type="password" v-model="pass" id="inputtype">
-  <small><input type="checkbox" v-on:click="view()">Show Password</small>
-  <br><button v-on:click="btn()">LOGIN </button>
-</form>
-</div>
-</div>
+<template src="./login.html">
 </template>
-
 <script>
 import { ipcRenderer } from 'electron'
 import storage from './database/storage'
@@ -38,10 +8,32 @@ export default {
     return {
       uname: '',
       pass: '',
-      cname: 0
+      cname: 0,
+      period: ''
     }
   },
+  mounted () {
+    this.onload()
+  },
   methods: {
+    onload () {
+      var date = new Date()
+      var last2digitOfYear = date.getFullYear().toString().substr(-2)
+      var currentYear = parseInt(last2digitOfYear)
+      var year1 = 0
+      var year2 = 0
+      var currentMonth = date.getMonth() + 1
+      if ((currentMonth === 1) || (currentMonth === 2) || (currentMonth === 3)) {
+        year1 = currentYear - 1
+        year2 = currentYear
+      } else {
+        year1 = currentYear
+        year2 = currentYear + 1
+      }
+      this.period = year1 + '-' + year2
+      console.log(year1)
+      console.log(year2)
+    },
     view () {
       var x = document.getElementById('inputtype')
       if (x.type === 'password') {
@@ -55,7 +47,7 @@ export default {
       console.log(this.uname)
       console.log(this.pass)
       if (((this.uname === 'Admin') && (this.pass === 'Admin')) || ((this.uname === 'edp') && (this.pass === 'edp'))) {
-        storage.set('login', {user: this.uname, 'company': this.cname})
+        storage.set('login', {user: this.uname, 'company': this.cname, 'period': this.period})
         ipcRenderer.send('create', 1)
       } else {
         alert('wrong credentials')
@@ -65,41 +57,5 @@ export default {
 }
 </script>
 
-<style>
-button{
-width:100%;
-height:40px;
-border:2px;
-background:
-}
-select{
-margin:30px;
-padding:3px;
-}
-input {
-margin:25px;
-padding:3px;
-}
-body {
-background:#46B
-}
-h1{
-align:"center";
-margin-top:50%;
-}
-.container {
-background:oldlace;
-float:center;
-width:400px;
-height:400px;
-margin:0 auto;
-}
-form {
-
-align:"center";
-margin-top: 40px;
-}
-label {
-margin:20px;
-}
+<style src="./login.css">
 </style>

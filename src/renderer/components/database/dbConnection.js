@@ -31,8 +31,28 @@ function queryExecSample (query) {
     })
   })
 }
+
+function insertRecord (tablename, statement) {
+  return new Promise(function (resolve, reject) {
+    var connection = connect()
+    connection.connect(function (err) {
+      if (err) {
+        alert(err)
+      }
+    })
+    var bind = statement
+    var query = 'INSERT INTO ?? set ?'
+    connection.query(query, [tablename, bind], function (err, rows, fields) {
+      if (err) {
+        alert(err)
+      }
+      resolve('Records inserted successfully')
+    })
+  })
+}
 export {
   queryExecSample,
   connect,
-  mysql
+  mysql,
+  insertRecord
 }

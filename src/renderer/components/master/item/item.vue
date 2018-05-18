@@ -2,7 +2,6 @@
 </template>
 <script>
 import { queryExecSample, mysql } from '@/components/database/dbConnection'
-var remote = require('electron').remote
 export default {
   data () {
     return {
@@ -56,19 +55,40 @@ export default {
     },
     delete1: function () {
       console.log('delete function')
+    },
+    changeData: function (data) {
+      for (var i = 0; i < data.length; i++) {
+        this.itemName = data[i].DESCR
+        this.itemPack = data[i].UMN
+        this.itemPackUnit = data[i].PCAPCTY
+        this.itemUnits = data[i].UNIQ
+        this.itemMrp = data[i].MRPC
+        this.itemTrad = data[i].TRPC
+        this.itemGroup = data[i].GRPD
+        this.itemBatch = data[i].Bname
+        this.itemType = data[i].UNIR
+        this.itemSampleFlag = data[i].SFLAG
+        this.itemTaxFlag = data[i].TfreeFlag
+      }
     }
   },
   watch: {
-    itemCode: function () {
-      var query = 'Select * from imas where shcd = ' + mysql.escape(this.itemCode) + '  '
-      var value = queryExecSample(query)
-      value.then(function (data) {
-        if (data.length > 0) {
-          alert('hey this record is already existed')
-          remote.getCurrentWindow().reload()
-        }
-        return data
-      })
+    itemCode: {
+      handler: function (val, oldval) {
+        var query = 'Select * from imas where shcd = ' + mysql.escape(this.itemCode) + '  '
+        var value = queryExecSample(query)
+        value.then(function (data) {
+          if (data.length > 0) {
+            alert('hey this record is already existed')
+            if (data.length > 0) {
+              this.changeData(data)
+            }
+            console.log(data)
+          }
+          return data
+        })
+      },
+      deep: true
     }
   }
 }

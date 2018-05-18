@@ -1,0 +1,40 @@
+
+<div>
+<div class="container" align="center">
+<h1>SAMPLE APPLICATION</h1><hr>
+<form>
+  <div id="a1">
+<label><b>
+Company : </b>
+</label>
+  <select v-model="cname">
+  <option value=01>RETORT PHARMACEUTICALS</option>
+  <option value=02>RETORT LABORATORIES</option>
+</select>
+</div><br>
+<div id="a2">
+  <div id="a21">
+<label><b>
+USER NAME : </b>
+</label>
+  <select v-model="uname">
+  <option value="Admin">Admin</option>
+  <option value="edp">Edp</option>
+  <option value="production">Developer</option>
+</select>
+</div>
+<div id="a22">
+<label> <b>Period : </b></label>
+<input type="text" v-model="period"><br>
+</div></div><br>
+<div id="a3">
+  <div id="a31">
+  <label> <b> Password :</b></label>
+  <input type="password" v-model="pass" id="inputtype"><br>
+</div>
+<div id="a32">  <small><input type="checkbox" v-on:click="view()">Show Password</small>
+</div></div><br>
+  <button v-on:click="btn()">LOGIN </button>
+</form>
+</div>
+</div>
