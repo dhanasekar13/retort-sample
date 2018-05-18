@@ -59,8 +59,8 @@ export default {
     }
   },
   watch: {
-    itemcd: function () {
-      var query = 'Select * from imas where shcd = ' + mysql.escape(this.itemcd) + '  '
+    itemCode: function () {
+      var query = 'Select * from imas where shcd = ' + mysql.escape(this.itemCode) + '  '
       var value = queryExecSample(query)
       value.then(function (data) {
         if (data.length > 0) {

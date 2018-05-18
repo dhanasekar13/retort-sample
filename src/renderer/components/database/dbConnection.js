@@ -7,6 +7,7 @@ function connect () {
     password: null,
     database: 'sample'
   })
+
   return con
 }
 // the queries are runned for sample applicaiton
@@ -15,16 +16,15 @@ function queryExecSample (query) {
     var connection = connect()
     connection.connect(function (err) {
       if (err) {
-        console.log(err.code)
-        console.log(err.fatal)
+        alert('check the network connection')
+        console.log(err)
       }
     })
     var $query = query
     console.log($query)
     connection.query($query, function (err, rows, fields) {
       if (err) {
-        console.log('An error ocurred performing the query.')
-        console.log(err)
+        alert('check the network connection')
         return
       }
       resolve(rows)
