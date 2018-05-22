@@ -31,7 +31,6 @@ function queryExecSample (query) {
     })
   })
 }
-
 function insertRecord (tablename, statement) {
   return new Promise(function (resolve, reject) {
     var connection = connect()
@@ -50,9 +49,38 @@ function insertRecord (tablename, statement) {
     })
   })
 }
+function updateRecord (tablename, value) {
+  return new Promise(function (resolve, reject) {
+    var connection = connect()
+    connection.connect(function (err) {
+      if (err) alert(err)
+    })
+  })
+}
+function deleteRecord (tablename, value) {
+  return new Promise(function (resolve, reject) {
+    var connection = connect()
+    connection.connect(function (err) {
+      if (err) {
+        alert(err)
+      }
+    })
+    var bind = value.shcd
+    var bind1 = value.company
+    var query = 'DELETE FROM ?? WHERE SHCD = ? AND CCode = ? '
+    connection.query(query, [tablename, bind, bind1], function (err, rows, fields) {
+      if (err) {
+        alert(err)
+      }
+      resolve('Records inserted successfully')
+    })
+  })
+}
 export {
   queryExecSample,
   connect,
   mysql,
-  insertRecord
+  insertRecord,
+  updateRecord,
+  deleteRecord
 }
