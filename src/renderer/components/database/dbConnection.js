@@ -16,7 +16,7 @@ function queryExecSample (query) {
     var connection = connect()
     connection.connect(function (err) {
       if (err) {
-        alert('check the network connection')
+        alert('check the network connection1')
         console.log(err)
       }
     })
@@ -24,7 +24,7 @@ function queryExecSample (query) {
     console.log($query)
     connection.query($query, function (err, rows, fields) {
       if (err) {
-        alert('check the network connection')
+        alert('check the network connection2')
         return
       }
       resolve(rows)
@@ -49,14 +49,7 @@ function insertRecord (tablename, statement) {
     })
   })
 }
-function updateRecord (tablename, value) {
-  return new Promise(function (resolve, reject) {
-    var connection = connect()
-    connection.connect(function (err) {
-      if (err) alert(err)
-    })
-  })
-}
+
 function deleteRecord (tablename, value) {
   return new Promise(function (resolve, reject) {
     var connection = connect()
@@ -81,6 +74,5 @@ export {
   connect,
   mysql,
   insertRecord,
-  updateRecord,
   deleteRecord
 }

@@ -21,7 +21,9 @@ export default {
       itemTaxFlag: '',
       hitted: this.modify(),
       full: Object,
-      record: Object
+      record: Object,
+      name: [],
+      value: []
     }
   },
   methods: {
@@ -75,7 +77,7 @@ export default {
     },
     save: function () {
       var full = imas
-      console.log(full)
+      console.log('The Full Record of full object' + full)
       if ((imas.SFLAG === this.itemSampleFlag) &&
         (imas.CCode === this.company) &&
         (imas.SHCD === this.itemCode) &&
@@ -95,41 +97,79 @@ export default {
       } else {
         if (full.BName !== this.itemBatch) {
           this.record.BName = this.itemBatch
+          this.name.push('BName')
+          this.value.push(this.itemBatch)
         }
         if (full.DESCR !== this.itemName) {
           this.record.DESCR = this.itemName
+          this.name.push('DESCR')
+          this.value.push(this.itemName)
         }
         if (full.GRPD !== this.itemGroup) {
           this.record.GRPD = this.itemGroup
+          this.name.push('GRPD')
+          this.value.push(this.itemGroup)
         }
         if (full.MRPC !== this.itemMrp) {
           this.record.MRPC = this.itemMrp
+          this.name.push('MRPC')
+          this.value.push(this.itemMrp)
         }
         if (full.PCAPCTY !== this.itemPack) {
           this.record.PCAPCTY = this.itemPack
+          this.name.push('PCAPCTY')
+          this.value.push(this.itemPack)
         }
         if (full.SFLAG !== this.itemSampleFlag) {
           this.record.SFLAG = this.itemSampleFlag
+          this.name.push('SFLAG')
+          this.value.push(this.itemSampleFlag)
         }
         if (full.TRPC !== this.itemTrad) {
           this.record.TRPC = this.itemTrad
+          this.name.push('TRPC')
+          this.value.push(this.itemTrad)
         }
         if (full.TfreeFlag !== this.itemTaxFlag) {
           this.record.TfreeFlag = this.itemTaxFlag
+          this.name.push('TfreeFlag')
+          this.value.push(this.itemTaxFlag)
         }
-        if (full.UMN !== this.itemUnits) {
-          this.record.UMN = this.itemUnits
+        if (full.UMN !== this.itemPackUnit) {
+          this.record.UMN = this.itemPackUnit
+          this.name.push('UMN')
+          this.value.push(this.itemPackUnit)
         }
-        if (full.UNIQ !== this.itemPackUnit) {
-          this.record.UNIQ = this.itemPackUnit
+        if (full.UNIQ !== this.itemUnits) {
+          this.record.UNIQ = this.itemUnits
+          this.name.push('UNIQ')
+          this.value.push(this.itemUnits)
         }
-        if (full.UNIR !== this.itemPack) {
-          this.record.UNIR = this.itemPack
+        if (full.UNIR !== this.itemUnits) {
+          this.record.UNIR = this.itemUnits
+          this.name.push('UNIR')
+          this.value.push(this.itemUnits)
         }
         if (full.ScheduleType !== this.itemType) {
           this.record.ScheduleType = this.itemType
+          this.name.push('ScheduleType')
+          this.value.push(this.itemType)
         }
-        console.log(this.record.DESCR)
+        console.log('This record contains the name of the object element ' + Object.keys(this.record))
+        console.log(this.name)
+        console.log(this.value)
+        var setting = ''
+        for (var i = 0; i < this.name.length; i++) {
+          var set = this.name[i] + ' = ' + mysql.escape(this.value[i])
+          if (this.name[i + 1]) {
+            set = set + ' , '
+          } else {
+
+          }
+          setting = setting + set
+        }
+        var query = ' update imas SET ' + setting + ' WHERE SHCD = ' + mysql.escape(this.itemCode)
+        queryExecSample(query).then(function () { })
         alert('this is modified')
       }
       console.log('save function')
