@@ -1,73 +1,53 @@
-form {
-display:inline
-}
-form input {
-padding:auto;
-margin:auto 5%;
-}
-button {
-width:19.5%;
-margin:auto auto;
+.container {
+  width:97%;
+  margin:2%;
+  background:lightgrey;
 }
 h2 {
-display:inline;
+  display:inline
 }
-label {
-width:auto 2%;
+label,form,p {
+  display:inline-block;
 }
-.container {
-background:lightgrey;
-border:3%;
-width:90%;
-height:90%;
-margin:auto auto;
-padding:2% 2%;
+#a1 label ,#a1 form{
+  width:46%;
+  text-align:center;
 }
-#t1 {
-margin:auto 2%;
-width:100%;
+#a1 form input, #a1 form p {
+  margin:2%
 }
-#t1 label ,h2 {
-width:1%;
+#a2 div ,#a10 div,#a9 div,#a7 div,#a8 div,#a9 div {
+  text-align:center;
+  width:45%;
+  display:inline-block;
 }
-#t1 select ,option {
-width:30%;
+#a2 div label,#a2 div select,#a31 label,#a31 option,#a32 label,#a32 input,#a7 div label,#a7 div input,#a8 div label,#a8 div input,#a9 div label,#a9 div input,,#a10 div label,#a10 div input{
+  width:40%;
 }
-#t2 {
-width:100%;
-margin :auto 2%;
+#a2 div option {
+  width:100%;
 }
-#t2 label,h2 {
-width:2%;
+.container div {
+  display:inline
 }
-#t2 input[type='text']{
-width:30%;
+#a31 label,#a31 .dropdown {
+  width:45%;
 }
-#t2 select {
-width:20%
+#a4 label, #a5 label, #a6 label ,#a4 input, #a5 input, #a6 input,#a32 label , #a32 input, #a {
+  width:45%;
+  text-align:center;
 }
-#t3 {
-width:100%;
-margin :auto 2%;
+#a11 div {
+  width:28%;
+  display:inline-block;
+    text-align:center;
 }
-#t3 label {
+div {
+  margin:1%
 }
-#t3  input[type='text'],#t4  input[type='text'],#t5  input[type='text']{
-width:70%
-}
-#t6 {
-width:100%
-}
-#t6 label{
-}
-#t6 input[type='text'],#t7 input[type='text'],#t8 input[type='text'],#t9 input[type='text']{
-width:25%;
-}
-.common {
-margin:auto 2%;
-width:100%;
-height:5%;
-}
-label {
-margin:auto 2%;
+#a12 input , #a12 button {
+  width:18%;
+  text-align:center;
+  margin:1%;
+
 }

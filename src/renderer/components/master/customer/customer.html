@@ -3,84 +3,108 @@
 <div class="container">
 <h1 align=center>Customer Master</h1>
 <hr>
-<div class="common">
+<form v-on:submit.prevent="hit">
+<div id="a1">
 <label><h2>Customer type  :       </h2></label>
-<form v-model="gender">
-<input type="radio" name="gender" value="male" checked > Distributor
-<input type="radio" name="gender" value="female" > Doctors
-<input type="radio" name="gender" value="other"> Others
+<form >
+<input type="radio" name="gender" v-model="ptype" value="DT" checked ><p> Distributor</p>
+<input type="radio" name="gender"v-model="ptype"  value="DR" > <p>Doctors</p>
+<input type="radio" name="gender" v-model="ptype" value="OT"> <p>Others</p>
 </form>
 </div>
 <br>
-<div id="t1">
+<div id="a2">
+  <div>
 <label><h2>State : </h2></label>
-<select v-model="state" >
-<option ></option>
+<select v-model="states">
+<option v-bind:value="st['StCode']" v-for="st in state" >{{st['StCode'] + ' - - ' + st['StName']}}</option>
 </select>
-<label><h2>District :</h2></label>
-<select v-model="dist">
-<option ></option>
-</select>
-</div><br>
-<div id="t2" class="common">
-<label><h2 >Customer code : </h2></label>
-<select v-model="code">
-<option></option>
-</select>
-<label><h2>Name : </h2></label>
-<input type="text" v-model="name">
-</div><br>
-<div id="t3" class="common">
-<label><h2>Address1  :</h2></label>
-<input type="text">
-</div><br>
-<div id="t4" class="common">
-<label><h2>Address2 :</h2></label>
-<input type="text">
-</div><br>
-<div id="t5" class="common">
-<label><h2>Address3  :</h2></label>
-<input type="text">
-</div><br>
-<div id="t6" class="common">
-<label><h2>Destination</h2></label>
-<input type="text">
-<label><h2>Fax No : </h2></label>
-<input type="text">
-</div><br>
-<div id="t7" class="common">
-<label><h2>phone no</h2></label>
-<input type="text">
-<label><h2>Pan no</h2></label>
-<input type="text">
-</div><br>
-<div id="t8" class="common">
-<label><h2>TIN/CST NO</h2></label>
-<input type="text">
-<label><h2>DL . NO</h2></label>
-<input type="text">
-</div><br>
-<div id="t9" class="common">
-<label><h2>AREA CODE</h2></label>
-<input type="text">
-<label><h2>BANK NAME</h2></label>
-<input type="text">
-</div><br>
-<div class="common">
-<label><h2>TR. DISC. S</h2></label>
-<input type="text">
-<label><h2>TR. DISC. N S</h2></label>
-<input type="text">
-<label><h2>TRANSPORT</h2></label>
-<input type="text">
-</div><br>
-<br style="margin:20">
-<div class="common">
-<button >Add New</button>
-<button>Save</button>
-<button>Modify</button>
-<button>Delete</button>
-<button>Report</button>
 </div>
+<div>
+<label><h2>District :</h2></label>
+<select v-model="district">
+  <option></option>
+<option v-for="dt in DtCode" v-bind:value="dt['DtCode']">{{dt['DtCode'] + ' - ' + dt['DtName']}}</option>
+</select>
+</div>
+</div><br>
+<div id="a3">
+  <div id="a31">
+<label><h2 >Customer code : </h2></label>
+<div class="dropdown">
+  <input type="text" name=""  v-model="custdet">
+<select onchange="this.previousElementSibling.value=this.value ; this.previousElementSibling.focus()" v-model="custdet">
+<option  v-bind:value="custdetadd">{{custdetadd}}</option>
+<option  v-bind:value="pt['PCode']"   v-for="pt in PCode">{{pt['PCode'] }}</option>
+</select>
+</div></div><div id="a32">
+<label><h2>Name : </h2></label>
+<input type="text" v-model="PNAME" required>
+</div></div><br>
+<div id="a4">
+<label><h2>Address1  :</h2></label>
+<input type="text" v-model="Address1" required>
+</div><br>
+<div id="a5">
+<label><h2>Address2 :</h2></label>
+<input type="text" v-model="Address2">
+</div><br>
+<div id="a6">
+<label><h2>Address3  :</h2></label>
+<input type="text" v-model="Address3">
+</div><br>
+<div id="a7" >
+  <div>
+<label><h2>Destination</h2></label>
+<input type="text" v-model="Address4">
+</div><div>
+<label><h2>Fax No : </h2></label>
+<input type="text" v-model="Fax">
+</div></div><br>
+<div id="a8">
+  <div>
+<label><h2>phone no</h2></label>
+<input type="text" v-model="Phone">
+</div><div>
+<label><h2>Pan no</h2></label>
+<input type="text" v-model="PAN">
+</div></div><br>
+<div id="a9">
+  <div>
+<label><h2>Tin/Cst no</h2></label>
+<input type="text" v-model="ADSTNO">
+</div><div>
+<label><h2>Dl. No</h2></label>
+<input type="text" v-model="DLNO">
+</div></div><br>
+<div id="a10"><div>
+<label><h2>Area Code</h2></label>
+<input type="text" v-model="AreaCode">
+</div><div>
+<label><h2>Bank name</h2></label>
+<input type="text" v-model="BName">
+</div></div><br>
+<div id="a11">
+  <div>
+<label><h2>TR. DISC. S</h2></label>
+<input type="text" v-model="TDIS">
+</div>
+<div>
+<label><h2>TR. DISC. N S</h2></label>
+<input type="text" v-model="TDIN">
+</div>
+<div>
+<label><h2>TRANSPORT</h2></label>
+<input type="text" v-model="TRAN">
+</div>
+</div><br><hr>
+<br style="margin:20">
+<div id="a12" align="center">
+  <input type="submit"  value="Create" v-on:click="change(creat)" >
+  <input type="submit"  value="Save" v-on:click="change(save)"  >
+  <input type="submit"  value="Delete" v-on:click="change(delete1)"  >
+<router-link to="/master_report/customer" tag="button">Report</router-link>
+</div>
+</form>
 </div>
 </div>
