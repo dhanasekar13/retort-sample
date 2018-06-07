@@ -1,0 +1,48 @@
+#base {
+  width:100%;
+}
+#base button {
+  
+  width:18%;
+  display:inline-block;
+}
+h2 {
+  display:inline
+}
+.container{
+  background:lightgrey;
+  border:3%;
+  width:90%;
+  height:90%;
+  margin:2% auto;
+  padding:2% 2%;
+}
+
+.g1 {
+  width:100%;
+}
+.g1 div, .g1 input {
+  width:40%;
+  display:inline-block;
+}
+.g2 ,.g4,.g3{
+  width:100%;
+}
+.g2 div, .g4 div {
+  width:30%;display:inline-block;
+}
+.g2 div label,.g2 div input,.g4 div label,.g4 div input {
+  width:50%;
+  display:inline;
+}
+.g3 div {
+  width:20%;
+  display:inline-block;
+}
+.g3 div input {
+  width:45%;
+  display:inline;
+}
+div{
+  margin:1%
+}

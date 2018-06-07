@@ -8,7 +8,7 @@
 <label><h2>Customer type  :       </h2></label>
 <form >
 <input type="radio" name="gender" v-model="ptype" value="DT" checked ><p> Distributor</p>
-<input type="radio" name="gender"v-model="ptype"  value="DR" > <p>Doctors</p>
+<input type="radio" name="gender" v-model="ptype"  value="DR" > <p>Doctors</p>
 <input type="radio" name="gender" v-model="ptype" value="OT"> <p>Others</p>
 </form>
 </div>
@@ -32,7 +32,7 @@
   <div id="a31">
 <label><h2 >Customer code : </h2></label>
 <div class="dropdown">
-  <input type="text" name=""  v-model="custdet">
+  <input type="text" name="" v-model="custdet1" v-bind:placeholder="custdet">
 <select onchange="this.previousElementSibling.value=this.value ; this.previousElementSibling.focus()" v-model="custdet">
 <option  v-bind:value="custdetadd">{{custdetadd}}</option>
 <option  v-bind:value="pt['PCode']"   v-for="pt in PCode">{{pt['PCode'] }}</option>

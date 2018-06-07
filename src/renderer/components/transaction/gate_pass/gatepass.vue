@@ -1,5 +1,5 @@
-<template>
-  <div>
-    <p> this is the Gate pass transcation </p>
-  </div>
+<template src="./gatepass.html">
+
 </template>
+<style src="./gatepass.css">
+</style>

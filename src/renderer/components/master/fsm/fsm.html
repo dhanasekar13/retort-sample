@@ -3,79 +3,88 @@
     <header>
           <h1 align=center><b>FSM-PSR MASTER</b></h1>
     </header><hr>
+    <form v-on:submit.prevent="hit">
     <div id="f1">
       <div id="f11">
         <label><h2>Designation</h2></label>
-        <select  name="">
-          <option value=""></option>
+        <select  v-model="field">
+          <option value="FSM">FSM</option>
+          <option value="PSR">PSR</option>
+          <option value="RSM">RSM</option>
         </select>
       </div>
       <div id="f2">
         <div id="f21">
             <label><h2>Code</h2></label>
-            <select >
-              <option></option>
-            </select>
+            <input type="text" name="" >
+          <select onchange="this.previousElementSibling.value=this.value ; this.previousElementSibling.focus()" v-model="det">
+          <option v-bind:value="custdet1">{{custdet1}}</option>
+          <option  v-bind:value="pt['Code']"   v-for="pt in PCode">{{pt['Code']}}</option>
+          </select>
         </div>
         <div id="f22">
           <label><h2>Name </h2></label>
-          <input type="text" name="" value="">
+          <input type="text" name="" value="" v-model="name" required>
         </div>
       </div>
       <div id="f3">
         <div id="f31">
           <label> <h2> Address1</h2></label>
-          <input type="text" name="" value="">
+          <input type="text" name="" value="" v-model="address1" required>
         </div>
       </div>
       <div id="f4">
         <div id="f41">
           <label> <h2>Address2</h2> </label>
-          <input type="text" name="" value="">
+          <input type="text" name="" value="" v-model="address2">
         </div>
       </div>
       <div id="f5">
         <div id="f51">
            <label>  <h2>Address3</h2> </label>
-           <input type="text" name="" value="">
+           <input type="text" name="" value="" v-model="address3">
         </div>
         <div id="f52">
           <label> <h2>Transport</h2> </label>
-            <input type="text" name="" value="">
+            <input type="text" name="" value="" v-model="trans">
         </div>
       </div>
       <div id="f6">
         <div id="f61">
         <label> <h2>Phone no.</h2> </label>
-        <input type="text" name="" value="">
+        <input type="text" name="" value="" v-model="phone">
       </div>
       <div id="f62">
         <label> <h2>Destination</h2> </label>
-        <input type="text" name="" value="">
+        <input type="text" name="" value="" v-model="dest">
       </div>
     </div>
       <div id="f7">
         <div id="f71">
-          <label> <h2>Date of join</h2> </label>
-          <input type="date" name="" value="">
+          <label><h2>Date_of_join</h2></label>
+          <input type="date"  v-model="join">
         </div>
         <div id="f72">
           <label> <h2>State</h2> </label>
-          <select  name="">
+          <select v-model="st1">
             <option></option>
+            <option  v-bind:value="pt['StCode']" v-for="pt in state">{{pt['StCode']}}</option>
           </select>
         </div>
         <div id="f73">
-          <label>Status</label>
-          <select name="">
+          <label><h2>Status</h2></label>
+          <select name="" v-model="status">
             <option></option>
+            <option value="E">E</option>
+            <option value="R">R</option>
           </select>
         </div>
       </div>
         <div id="f8" align=center>
           <div id="f81">
-            <select  name="">
-              <option></option>
+            <label><h2>District Code :</h2></label>
+            <select v-model="dt1">
+              <option  v-bind:value="dt['StCode']" v-for="dt in dtcode">{{dt['DtCode'] + ' - ' + dt['DtName']}}</option>
             </select>
           </div>
         </div>
@@ -83,13 +92,14 @@
 <br>
       <hr>
 <div id="f9">
-  <button type="button" name="button">Add New</button>
-  <button type="button" name="button">Save</button>
-  <button type="button" name="button">Modify</button>
-  <button type="button" name="button">Delete</button>
-  <button type="button" name="button">Report</button>
+  <input type="submit"  value="Create" v-on:click="change(creat)" >
+  <input type="submit"  value="Save" v-on:click="change(save)"  >
+  <input type="submit"  value="Delete" v-on:click="change(delete1)"  >
+<router-link to="/master_report/fsm" tag="button">Report</router-link>
+
 </div>
       </div>
+      </form>
             </div>
+
   </div>
-</div>

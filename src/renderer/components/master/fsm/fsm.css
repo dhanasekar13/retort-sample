@@ -21,8 +21,7 @@ div {
   width:97%;
 }
 #f11 h2 {
-  width:100%;
-  display:inline-block;
+
 }
 #f11 select ,#f81 select,#f72 select{
   width:60%;
@@ -36,15 +35,18 @@ div {
   width:48%;
   display:inline-block
 }
-#f21 label  {
+#f21 label,#f22 label {
+  width:30%;
+  display:inline-block;
+}
+#f21 select,#f21 input {
+  width:30%;
+}
+#f51 label ,#f52 label,#f61 label,#f62 label{
   width:40%;
   display:inline-block;
 }
-#f22 label,#f51 label ,#f52 label,#f61 label,#f62 label{
-  width:40%;
-  display:inline-block;
-}
-#f21 select,#f22 input,#f51 input,#f52 input ,#f61 input ,#f62 input{
+#f51 input,#f52 input ,#f61 input ,#f62 input{
   width:48%;
   display:inline-block;
 }
@@ -55,20 +57,24 @@ div {
   width:60%;
 }
 #f71 label,#f72 label,#f73 label {
+  width:30%;
+  display:inline-block;
+
+}
+#f71 input {
   width:40%;
   display:inline-block;
+    margin-left:20%;
 }
-#f71 input ,#f71 option ,#f71 option{
-  width:50%;
-}
+
 #f72 select,#f73 select {
-  width:50%;
+  width:60%;
 }
 #f9 {
   width:100%;
 }
-#f9 button{
-  width:19%;
+#f9 button, input{
+  width:24%;
   display:inline-block;
 }
 h2{

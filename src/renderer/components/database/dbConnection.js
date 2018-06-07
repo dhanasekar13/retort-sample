@@ -49,7 +49,23 @@ function insertRecord (tablename, statement) {
     })
   })
 }
-
+function deletesome (tablename, value) {
+  return new Promise(function (resolve, reject) {
+    var connection = connect()
+    connection.connect(function (err) {
+      if (err) {
+        alert(err)
+      }
+    })
+    var query = 'DELETE FROM ?? WHERE ? '
+    connection.query(query, [tablename, value], function (err, rows, fields) {
+      if (err) {
+        alert(err)
+      }
+      resolve('Records inserted successfully')
+    })
+  })
+}
 function deleteRecord (tablename, value) {
   return new Promise(function (resolve, reject) {
     var connection = connect()
@@ -74,5 +90,6 @@ export {
   connect,
   mysql,
   insertRecord,
-  deleteRecord
+  deleteRecord,
+  deletesome
 }
