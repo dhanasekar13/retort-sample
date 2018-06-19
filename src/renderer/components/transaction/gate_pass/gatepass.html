@@ -5,68 +5,71 @@
             <p><h2>Stock Entry From Gate Pass</h2></p>
         </div>
         <hr>
+        <form v-on:submit.prevent="hit">
         <div class="g">
             <div class="g1">
               <div class="">
                 <label><h2>Product</h2></label>
                 </div>
-
-              <input type="text" name="" value="">
+                <select v-model="itemcd">
+                <option v-bind:value="st"v-for="st in itemmas" >{{st['DESCR']+ '  -  ' +st['PCAPCTY']+st['UMN']+' - - '+st['SHCD']}}</option>
+                </select>
             </div>
             <div class="g2">
               <div class="">
                 <label><h2>GatePass NO.</h2></label>
-                <input type="text" name="" value="">
+                <input type="text" v-model="gpno" required>
               </div>
               <div class="">
                 <label><h2>Rec.Date</h2></label>
-                <input type="date" name="" value="">
+                <input type="date" name="" value='new Date()' v-model="gpdate">
               </div>
               <div class="">
                 <label><h2>Batch NO .</h2></label>
-                <input type="text" name="" value="">
+                <input type="text" name="" v-model="gpbatch=itemcd['BName']">
               </div>
             </div>
             <div class="g3">
               <div class="">
                 <label><h2>Quantity</h2></label>
-                <input type="text" name="" value="">
+                <input type="text" name="" v-model="gpqty" required>
               </div>
               <div class="">
                 <label><h2>Rate</h2></label>
-                <input type="date" name="" value="">
+                <input type="text" name="" v-model="gprate">
               </div>
               <div class="">
                 <label><h2>MRP .</h2></label>
-                <input type="text" name="" value="">
+                <input type="text" name="" v-model="gpmrp">
               </div>
               <div class="">
                 <label><h2>UNIT.</h2></label>
-                <input type="text" name="" value="">
+                <input type="text" name="" v-model="gpunit">
               </div>
             </div>
             <div class="g4">
               <div class="">
                 <label><h2>Mfg. Date.</h2></label>
-                <input type="date" name="" value="">
+                <input type="date" name="" v-model="gpmfgdt">
               </div>
               <div class="">
                 <label><h2>Exp. Date</h2></label>
-                <input type="date" name="" value="">
+                <input type="date" name="" v-model="gpexpdt">
               </div>
               <div class="">
                 <label><h2>ED Flag .</h2></label>
-                <input type="text" name="" value="">
+                <input type="text" name="" value="N" v-model="gpflag">
               </div>
             </div>
         </div><hr><br>
         <div id="base">
-            <button name="" value="Add NEW"> <b> Add NEW </b></button>
-            <button name="" value="SAVE"><b>SAVE</b></button>
-            <button name="" value="DELETE"><b>DELETE</b></button>
-            <button name="" value="STOCK REPORT (CLOSING)"><b>STOCK REPORT</b> (CLOSING)</button>
-            <button name="" value="GATE PASS "><b>GATE PASS</b></button>
+          <input type="submit"  value="ADD NEW" v-on:click="change(creat)">
+          <input type="submit" value="Save" v-on:click="change(save)">
+          <input type="submit" value="DELETE" v-on:click="change(delete1)">
+          <router-link to="/transaction_report/stock" tag="button">STOCK CHECKING<b>(CLOSING)</b></router-link>
+          <router-link to="/transaction_report/gatepass" tag="button">GATE PASS Report</router-link>
         </div>
+      </form>
     </div>
   </div>
 

@@ -16,7 +16,7 @@ function queryExecSample (query) {
     var connection = connect()
     connection.connect(function (err) {
       if (err) {
-        alert('check the network connection1')
+        alert('switch the xampp server ON')
         console.log(err)
       }
     })
@@ -24,7 +24,7 @@ function queryExecSample (query) {
     console.log($query)
     connection.query($query, function (err, rows, fields) {
       if (err) {
-        alert('check the network connection2')
+        alert('Query NOT Executed||Worked')
         return
       }
       resolve(rows)

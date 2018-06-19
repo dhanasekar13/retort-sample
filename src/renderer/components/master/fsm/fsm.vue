@@ -155,7 +155,7 @@ export default {
           var values = data[length - 1]['Code']
           var no = current.PCode.length + 1
           var cut = values.slice(0, -2)
-          var vals = cut + '0' + no
+          var vals = cut + no
           current.custdet1 = vals
         }
       })

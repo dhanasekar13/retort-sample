@@ -1,8 +1,8 @@
 #base {
   width:100%;
 }
-#base button {
-  
+#base button, #base input {
+
   width:18%;
   display:inline-block;
 }
